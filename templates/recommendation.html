@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>메뉴 추천</title>
+  </head>
+  <body>
+    {% if menu %}
+    <h1>추천된 메뉴: {{ menu }}</h1>
+    <a href="{{ url_for('home') }}">메인으로 돌아가기</a>
+    {% else %}
+    <form method="post">
+      <label for="gender">성별:</label>
+      <select name="gender" id="gender">
+        <option value="남성">남성</option>
+        <option value="여성">여성</option>
+      </select>
+      <br /><br />
+      <label for="age">연령대:</label>
+      <select name="age" id="age">
+        <option value="10대">10대</option>
+        <option value="20대">20대</option>
+        <option value="30대">30대</option>
+        <option value="40대">40대</option>
+      </select>
+      <br /><br />
+      <label for="taste">선호하는 맛:</label>
+      <select name="taste" id="taste">
+        <option value="단맛">단맛</option>
+        <option value="짠맛">짠맛</option>
+        <option value="매운맛">매운맛</option>
+      </select>
+      <br /><br />
+      <label for="season">계절:</label>
+      <select name="season" id="season">
+        <option value="봄">봄</option>
+        <option value="여름">여름</option>
+        <option value="가을">가을</option>
+        <option value="겨울">겨울</option>
+      </select>
+      <br /><br />
+      <button type="submit">추천받기</button>
+    </form>
+    {% endif %}
+  </body>
+</html>
